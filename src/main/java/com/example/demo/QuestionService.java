@@ -11,6 +11,6 @@ public class QuestionService {
     }
 
     public void addQuestion(Question question){
-        System.out.println( question.getQuestion());
+        System.out.println(question);
     }
 }

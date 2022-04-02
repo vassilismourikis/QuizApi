@@ -8,4 +8,12 @@ public class Answer {
         this.desc = desc;
         this.isCorrect = isCorrect;
     }
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "desc='" + desc + '\'' +
+                ", isCorrect=" + isCorrect +
+                '}';
+    }
 }

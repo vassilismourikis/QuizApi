@@ -19,6 +19,8 @@ public class QuestionController {
         return questionService.getQuestions();
     }
 
+//    curl -i -X POST -H "Content-Type: application/json" -d "{\"question\": \"QUESTION\", \"answers\": [{\"desc\": \"ANSWER1\", \"isCorrect\": true}, {\"desc\": \"ANSWER2\", \"isCorrect\": false}]}" http://localhost:8080/api/quiz/
+
     @PostMapping
     public void addQuestion(@RequestBody Question question){
         questionService.addQuestion(question);
