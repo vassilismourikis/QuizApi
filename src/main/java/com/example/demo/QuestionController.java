@@ -21,7 +21,8 @@ public class QuestionController {
 
     @PostMapping
     public void addQuestion(@RequestBody Question question){
-        //method from service layer
+        questionService.addQuestion(question);
+    }
     }
 
-}
+
