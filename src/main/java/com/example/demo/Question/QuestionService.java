@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Question;
 
 import org.springframework.stereotype.Service;
 import java.util.Random;

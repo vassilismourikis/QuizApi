@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Question;
 
 public class Answer {
     private String desc;
