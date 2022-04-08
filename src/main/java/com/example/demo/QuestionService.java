@@ -1,16 +1,18 @@
 package com.example.demo;
 
 import org.springframework.stereotype.Service;
+import java.util.Random;
 
 
 @Service
 public class QuestionService {
-
+    Random rand = new Random();
     public String getQuestions(){
-        return "Hello World";
+        return "Home Screen";
     }
 
-    public void addQuestion(Question question){
-        System.out.println(question);
+    public int addQuestion(Question question){
+        //bound=max unique generated number
+        return rand.nextInt(10000) + 1;
     }
 }
