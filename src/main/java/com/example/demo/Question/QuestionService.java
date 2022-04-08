@@ -12,6 +12,7 @@ public class QuestionService {
     }
 
     public int addQuestion(Question question){
+        //TODO: make it unique with a db
         //bound=max unique generated number
         return rand.nextInt(10000) + 1;
     }
