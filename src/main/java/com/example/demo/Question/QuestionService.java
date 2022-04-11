@@ -1,14 +1,25 @@
 package com.example.demo.Question;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Random;
 
 
 @Service
 public class QuestionService {
+    private final QuestionRepository questionRepository;
+
     Random rand = new Random();
-    public String getQuestions(){
-        return "Home Screen";
+
+    @Autowired
+    public QuestionService(QuestionRepository questionRepository){
+        this.questionRepository=questionRepository;
+    }
+
+    public List<Question> getQuestions(){
+        return questionRepository.findAll();
     }
 
     public int addQuestion(Question question){
