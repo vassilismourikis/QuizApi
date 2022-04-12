@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path= "api/quiz/")
 public class QuestionController {
@@ -16,7 +18,7 @@ public class QuestionController {
     }
 
     @GetMapping
-    public String getQuestions(QuestionService questionService){
+    public List<Question> getQuestions(QuestionService questionService){
         return questionService.getQuestions();
     }
 

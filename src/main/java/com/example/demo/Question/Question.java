@@ -1,14 +1,29 @@
 package com.example.demo.Question;
 
-import java.util.List;
+import javax.persistence.*;
+import java.util.UUID;
 
+
+@Entity
+@Table
 public class Question {
+    @Id
+    @SequenceGenerator(
+            name="question_sequence",
+            sequenceName = "question_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy= GenerationType.SEQUENCE,
+            generator = "question_sequence"
+    )
+    private Integer id;
     private String question;
-    private List<Answer> answers;
+    private Answer[] answers;
 
     public Question() {}
 
-    public Question(String question, List<Answer> answers) {
+    public Question(String question, Answer[] answers) {
         this.question = question;
         this.answers = answers;
     }
@@ -21,11 +36,11 @@ public class Question {
         this.question = question;
     }
 
-    public List<Answer> getAnswers() {
+    public Answer[] getAnswers() {
         return answers;
     }
 
-    public void setAnswers(List<Answer> answers) {
+    public void setAnswers(Answer[] answers) {
         this.answers = answers;
     }
 
